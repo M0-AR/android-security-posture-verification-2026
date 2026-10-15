@@ -118,13 +118,35 @@ docker compose up --build verifier
 
 ## 🌐 Web preview — GitHub Pages
 
-This repo ships a beautiful shareable site: [`docs/preview.html`](docs/preview.html) (quiz + tables + deploy steps).
+This repo ships a beautiful shareable site with the 8-question quiz: [`docs/preview.html`](docs/preview.html).
+
+**Click to open (live site):**
+- Home: https://M0-AR.github.io/android-security-posture-verification-2026/
+- Interactive page: https://M0-AR.github.io/android-security-posture-verification-2026/preview.html
+- Same page under root source: https://M0-AR.github.io/android-security-posture-verification-2026/docs/preview.html
+
+| Link | When it renders | Meaning |
+|---|---|---|
+| `/` | source `/docs` ✅ | served from `docs/index.html` — recommended |
+| `/preview.html` | source `/docs` ✅ | served from `docs/preview.html` — recommended |
+| `/docs/preview.html` | source `/` (root) | served from `docs/preview.html` under root source |
+
+> If `/preview.html` 404s but `/docs/preview.html` 200s, Pages is serving source `/` (root). Either switch Settings → Pages to `/docs`, or use the `/docs/preview.html` link — this repo ships mirrors so both settings resolve.
 
 **Enable Pages (2026 path):**
-1. Push `main` with `docs/preview.html` + `docs/media/demo.gif`.
+1. Push `main` with `docs/preview.html` + `docs/index.html` + `docs/media/demo.gif` (plus root mirrors `preview.html` + `index.html` + `.nojekyll`).
 2. GitHub → **Settings → Pages → Build and deployment → Source: Deploy from a branch**.
-3. Branch `main`, folder `/docs` → Save. Wait ~1 minute.
-4. Open `https://&lt;you&gt;.github.io/&lt;repo&gt;/preview.html` and share it.
+3. Branch `main`, folder `/docs` → Save. Wait 1–2 min, check Actions “pages build and deployment” is green.
+4. Open `/preview.html` above and share it. For local preview, open [`docs/preview.html`](docs/preview.html) directly in your browser.
+
+**Quick check (no login):**
+```bash
+BASE="https://M0-AR.github.io/android-security-posture-verification-2026"
+for p in "" "preview.html" "docs/preview.html"; do
+  printf "%s -> " "/$p"
+  curl -s -o /dev/null -w "%{http_code}\n" "$BASE/$p"
+done
+```
 
 ---
 
@@ -351,8 +373,13 @@ docker compose up --build verifier
 ├── benchmarks/
 │   └── mapping_2015book_to_masvs2026.csv  # chapter → MASVS verdict benchmark
 ├── docs/
-│   ├── preview.html             # shareable site (GitHub Pages: /docs) + 8-Q quiz
+│   ├── preview.html             # canonical site + 8-Q quiz (source /docs → /preview.html)
+│   ├── index.html               # same as preview (source /docs → /)
+│   ├── .nojekyll                # keep Pages static
 │   └── media/demo.gif           # animated terminal demo for README + Pages
+├── preview.html                 # root mirror for source / (asset path → docs/media/)
+├── index.html                   # root redirect + fallback links for source /
+├── .nojekyll                    # keep Pages static (root source)
 └── data/live/                   # verification_snapshot.json + per-source evidence (generated)
 ```
 

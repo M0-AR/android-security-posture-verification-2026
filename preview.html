@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Android Security Posture Verification 2026 — Interactive Preview</title>
+<meta name="description" content="Defensive, reproducible verification: from 2015 Android playbook to MASVS v2 / MASTG v2. Detectors, live evidence, quiz from zero to pro.">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#30363d;--txt:#e6edf3;--mut:#8b949e;--acc:#58a6ff;--ok:#3fb950;--warn:#d29922;--bad:#f85149;--card:#0f141b}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+a{color:var(--acc)}header.hero{padding:64px 24px 32px;text-align:center;background:radial-gradient(800px 300px at 50% -60px,#1f6feb33,transparent),linear-gradient(#0d1117,#0d1117)}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:4px;font-size:13px;color:var(--txt);background:#161b22}
+.btn{display:inline-block;margin:10px 6px;padding:12px 20px;border-radius:10px;background:#1f6feb;color:#fff;text-decoration:none;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px 80px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.card h3{margin:6px 0 8px}.mut{color:var(--mut)}.kpi{font-size:28px;font-weight:800}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{background:#161b22}
+pre{background:#0a0e14;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.quiz-q{border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0;background:#0f141b}
+.quiz-q h4{margin:0 0 8px}.opt{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#161b22;color:var(--txt);cursor:pointer}
+.opt.correct{border-color:var(--ok);background:#12261a}.opt.wrong{border-color:var(--bad);background:#2d1215}
+.expl{display:none;margin-top:8px;color:var(--mut);font-size:14px}.score{position:sticky;top:0;background:#0d1117ee;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:14px 0}
+footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--mut)}
+img.demo{max-width:100%;border:1px solid var(--line);border-radius:12px}
+.step{display:flex;gap:12px;margin:10px 0}.n{flex:0 0 30px;height:30px;border-radius:50%;background:#1f6feb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+</style>
+</head>
+<body>
+<header class="hero">
+<div><span class="badge">defensive only</span><span class="badge">reproducible</span><span class="badge">MASVS v2 • MASTG v2</span><span class="badge">live-verified 2026-10-15</span></div>
+<h1>Android Security Posture Verification 2026</h1>
+<p class="mut" style="max-width:760px;margin:0 auto">From a 2015 playbook to what actually holds on modern Android. Static detectors + live public evidence + a chapter-to-control benchmark. No payloads. No bypasses. Just proof.</p>
+<p><a class="btn" href="#quiz">Start the interactive quiz</a><a class="btn ghost" href="#run">Run it in 3 commands</a></p>
+<p class="mut">GitHub Pages: this file is <code>docs/preview.html</code> — enable <b>Settings → Pages → Deploy from a branch → main → /docs</b>, then open <code>/preview.html</code>.</p>
+<img class="demo" src="docs/media/demo.gif" alt="Animated demo of the defensive verifier: live fetch, tests, manifest audit">
+</header>
+<div class="wrap">
+
+<h2>Executive summary — read this in 60 seconds</h2>
+<div class="grid">
+<div class="card"><div class="kpi">5/5</div><div>live sources verified<br><span class="mut">standards + bulletins + docs, recorded with date + status</span></div></div>
+<div class="card"><div class="kpi">5</div><div>checks green<br><span class="mut">weak flagged, hardened quiet, ethics gate on</span></div></div>
+<div class="card"><div class="kpi">10→7</div><div>chapters mapped<br><span class="mut">obsolete / superseded / defensive-only / excluded</span></div></div>
+<div class="card"><div class="kpi">0</div><div>payloads shipped<br><span class="mut">detection + hardening guidance only</span></div></div>
+</div>
+
+<h2>What you get</h2>
+<div class="grid">
+<div class="card"><h3>🛡️ Manifest posture audit</h3><p>Flags debuggable releases, backup posture, cleartext, missing explicit export, unguarded exports, broad URI grants. Launcher-aware. Links every finding to a fix.</p></div>
+<div class="card"><h3>💾 Storage pattern scan</h3><p>Finds unsafe storage habits and points to DataStore + Keystore, scoped storage, and backup-rule curation. Catches deprecated wrappers.</p></div>
+<div class="card"><h3>🌐 Network config review</h3><p>Static Network Security Config check: cleartext policy, pin-set presence, user-CA trust. No interception. Backend guidance via standard web controls.</p></div>
+<div class="card"><h3>📡 Live evidence fetcher</h3><p>Fetches only public standards/docs/bulletins, stores status + excerpt + date. If offline, marks results degraded instead of guessing.</p></div>
+<div class="card"><h3>🗺️ Chapter→control benchmark</h3><p>Every legacy chapter gets one verdict: obsolete, superseded, defensive-only, restricted, or excluded — with evidence source.</p></div>
+<div class="card"><h3>🧪 Reproducible lab</h3><p>Synthetic weak/hardened fixtures, pytest suite, Docker verifier. Re-run in minutes without privileged access.</p></div>
+</div>
+
+<h2>Who this is for</h2>
+<table><tr><th>You are…</th><th>Use it to…</th><th>Start with…</th></tr>
+<tr><td>Beginner (first Android security repo)</td><td>Learn what actually matters in 2026 without dangerous tutorials</td><td>Beginner guide + quiz Level 1–2</td></tr>
+<tr><td>Student / interview prep</td><td>Speak precisely about exported components, storage, backup, network posture</td><td>Quiz Level 2–3 + mapping table</td></tr>
+<tr><td>App developer</td><td>Harden your own manifest, storage, network config before release</td><td>Run auditors on your own app (authorized only)</td></tr>
+<tr><td>Security reviewer</td><td>Baseline an app against MASVS controls with traceable evidence</td><td>Mapping CSV + live snapshot + detectors</td></tr>
+<tr><td>Researcher (PhD seed)</td><td>Extend with temporal benchmarks, wrapper-churn, primitive A/B studies</td><td>README §6 + METHODOLOGY.md</td></tr>
+</table>
+
+<h2 id="run">Run it in 3 commands</h2>
+<pre><code>pip install -r requirements.txt
+python src/live_verify.py --out data/live
+python -m pytest -q
+# containerized:
+docker compose up --build verifier</code></pre>
+<p class="mut">Use only on apps you own or are authorized to test. See ETHICS.md. Dynamic interception and bypass work are out of scope by design.</p>
+
+<h2>What still matters (and what does not)</h2>
+<table><tr><th>Legacy topic</th><th>2026 verdict</th><th>Do this instead</th></tr>
+<tr><td>Implicit exported defaults, old file paths</td><td>Partially obsolete</td><td>Explicit export everywhere; scoped storage; verify on current AVD</td></tr>
+<tr><td>2014 Top-10 + unmaintained automation</td><td>Taxonomy superseded</td><td>MASVS controls → weakness IDs → atomic tests + demos</td></tr>
+<tr><td>Cleartext prefs / DB / backup unpack flows</td><td>API deprecated</td><td>DataStore + Keystore; backup rules; posture check only</td></tr>
+<tr><td>Exported-component issues as a class</td><td>Still real, defensive-only</td><td>Detect + guard with signature permissions + input validation</td></tr>
+<tr><td>WebView file access, sensitive logging</td><td>Still real in parts</td><td>Disable file access, validate URLs, strip sensitive logs</td></tr>
+<tr><td>Proxy-everything + bypass-as-routine</td><td>Restricted to own apps</td><td>Config review + authorized backend testing only</td></tr>
+<tr><td>Malware building, lock bypass, device exploitation</td><td>Excluded</td><td>Patch promptly, change defaults, coordinated disclosure</td></tr>
+</table>
+
+<h2 id="quiz">🎓 Interactive quiz — from zero to pro</h2>
+<p class="mut">Answer in the page. Explanations appear after each choice. Score levels: 0–3 Explorer · 4–6 Practitioner · 7–8 Professional.</p>
+<div class="score" id="score">Score: 0 / 8 — Level: Explorer</div>
+<div id="quizbox"></div>
+<p><button class="opt" onclick="resetQuiz()">Reset quiz</button></p>
+
+<h2>Enable this page on GitHub Pages (2026 path)</h2>
+<div class="step"><div class="n">1</div><div>Push this repo to GitHub with <code>docs/preview.html</code> and <code>docs/media/demo.gif</code> on <code>main</code>.</div></div>
+<div class="step"><div class="n">2</div><div>Open <b>Settings → Pages → Build and deployment → Source: Deploy from a branch</b>.</div></div>
+<div class="step"><div class="n">3</div><div>Branch: <code>main</code> · Folder: <code>/docs</code> → Save. Wait ~1 min.</div></div>
+<div class="step"><div class="n">4</div><div>Open <code>https://&lt;you&gt;.github.io/&lt;repo&gt;/preview.html</code>. Share that link — readers see this page, not raw markdown.</div></div>
+<p class="mut">Custom domain (optional): Pages → Custom domain → add DNS CNAME → Enforce HTTPS. Project page stays free.</p>
+
+<h2>FAQ</h2>
+<details><summary>Do I need a rooted phone?</summary><p class="mut">No. Everything here runs on synthetic fixtures + public docs. Use a dedicated test device only if you later do authorized dynamic work.</p></details>
+<details><summary>Does this hack apps or bypass locks?</summary><p class="mut">No. Detection + hardening only. Interception, payloads, and bypasses are excluded and blocked by an automated gate.</p></details>
+<details><summary>What counts as “verified”?</summary><p class="mut">A claim counts when it has a live fetch (date + status + excerpt) or a passing test. Otherwise it is marked unverified.</p></details>
+<details><summary>Can I use this for interviews?</summary><p class="mut">Yes — finish the quiz at Professional level and be able to trace one finding from detector → fixture → fix → standard.</p></details>
+
+</div>
+<footer>Defensive research artifact · No warranty · Test only systems you own or are authorized to test · Re-run live verification before citing</footer>
+<script>
+const QS=[
+{q:"An activity has an intent-filter but no explicit exported value. On modern Android (API 31+) you should…",o:["Leave it — defaults are safe","Set exported explicitly; default to false","Export everything for compatibility"],a:1,e:"Since API 31, filtered components must declare exported explicitly. Implicit defaults varied historically and caused accidental exposure. Default to false."},
+{q:"Your app stores a login token. The 2026-safe direction is…",o:["Cleartext SharedPreferences for speed","External storage so users can back it up","DataStore + Keystore-backed encryption with curated backup rules"],a:2,e:"Cleartext prefs and external storage are classic failures. Current guidance favors DataStore + Keystore and explicit backup rules."},
+{q:"allowBackup is true with no rules in a sensitive app. Best fix?",o:["Ignore — backups are harmless","Set allowBackup=false or curate dataExtractionRules to exclude secrets","Encrypt the whole phone manually"],a:1,e:"Backup/restore can carry tokens and keys off-device. Exclude secrets or disable backup for sensitive apps."},
+{q:"An exported component must stay exported. What reduces risk most?",o:["Add a comment saying it is safe","Guard with a signature-level permission + validate all inputs","Hide it by renaming the class"],a:1,e:"Visibility needs authorization. Signature permissions restrict callers; validation handles malicious inputs."},
+{q:"No Network Security Config file is found. What do you conclude?",o:["Network is secure by default","Posture unknown — add config, deny cleartext, prefer system CAs","Pinning is automatically on"],a:1,e:"Absence of config means you cannot confirm cleartext/pinning posture. Add config and enforce TLS."},
+{q:"A scanner reports 98% accuracy on a single random split. For a publishable claim you…",o:["Ship it — higher is better","Require temporal splits + bias audit (train past, test future)","Add more features until 99%"],a:1,e:"Single-split numbers inflate due to temporal/spatial bias. Report decay over time gaps."},
+{q:"OWASP Mobile Top-10 (2014) vs today. Correct mapping?",o:["Use M1–M10 verbatim in 2026 reports","Remap to MASVS controls → weakness IDs → atomic tests","Skip standards; scanners are enough"],a:1,e:"The taxonomy moved to MASVS + weakness enumeration + atomic tests. Scanner-only is explicitly insufficient."},
+{q:"You find a live flaw in someone else's app. Correct next step?",o:["Publish exploit steps for stars","Use it to pull their data for proof","Coordinated disclosure; publish only detector + hardening"],a:2,e:"Do not publish exploitation. Disclose privately, publish defenses and methodology."}
+];
+let score=0,answered={};
+function render(){
+ const box=document.getElementById('quizbox');box.innerHTML='';
+ QS.forEach((item,i)=>{
+  const d=document.createElement('div');d.className='quiz-q';
+  d.innerHTML='<h4>Q'+(i+1)+'. '+item.q+'</h4>';
+  item.o.forEach((opt,j)=>{
+   const b=document.createElement('button');b.className='opt';b.textContent=opt;
+   b.onclick=()=>{
+    if(answered[i]!==undefined)return;
+    answered[i]=j;
+    const kids=d.querySelectorAll('.opt');
+    kids[item.a].classList.add('correct');
+    if(j!==item.a){b.classList.add('wrong');}
+    else{score++;}
+    const e=document.createElement('div');e.className='expl';e.style.display='block';e.textContent='Why: '+item.e; d.appendChild(e);
+    update();
+   };
+   d.appendChild(b);
+  });
+  box.appendChild(d);
+ });
+}
+function level(s){return s<=3?'Explorer':s<=6?'Practitioner':'Professional';}
+function update(){document.getElementById('score').textContent='Score: '+score+' / '+QS.length+' — Level: '+level(score);}
+function resetQuiz(){score=0;answered={};render();update();}
+render();update();
+</script>
+</body>
+</html>
