@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SYNTHETIC defensive fixture. Not from any real app. Intentionally weak posture for detector testing. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.synthetic.weak">
+  <application android:label="SyntheticWeak" android:debuggable="true" android:allowBackup="true" android:usesCleartextTraffic="true">
+    <activity android:name=".MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".AdminPanel" android:exported="true" />
+    <service android:name=".SyncService" android:exported="true" />
+    <receiver android:name=".LegacyReceiver">
+      <intent-filter>
+        <action android:name="com.example.synthetic.WEAK_ACTION" />
+      </intent-filter>
+    </receiver>
+    <provider android:name=".WeakProvider" android:authorities="com.example.synthetic.weak.provider" android:exported="true" android:grantUriPermissions="true" />
+  </application>
+</manifest>

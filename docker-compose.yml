@@ -1,0 +1,15 @@
+services:
+  verifier:
+    build: .
+    volumes:
+      - ./data/live:/work/data/live
+    command: >
+      bash -lc "python src/live_verify.py --out data/live;
+      python -m pytest -q;
+      python src/manifest_audit.py fixtures/benign_manifests/synthetic_weak.xml | head -n 60"
+  docs:
+    image: python:3.11-slim
+    working_dir: /work
+    volumes:
+      - .:/work
+    command: ["bash", "-lc", "python -c \"print('docs placeholder: open README.md+P APER. Audit via verifier service.')\""]

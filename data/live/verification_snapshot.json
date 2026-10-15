@@ -1,0 +1,95 @@
+{
+  "fetched_at_utc": "2026-10-15T10:55:26.502363+00:00",
+  "tool": "src/live_verify.py",
+  "degraded": false,
+  "sources": {
+    "masvs_front": {
+      "url_requested": "https://mas.owasp.org/MASVS/",
+      "url_final": "https://mas.owasp.org/MASVS/",
+      "http_status": 200,
+      "ok": true,
+      "bytes": 1139552,
+      "excerpt": " <!doctype html> <html lang=\"en\" class=\"no-js\"> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"> <link rel=\"prev\" href=\"..\"> <link rel=\"next\" href=\"01-Foreword/\"> <link rel=\"icon\" href=\"../assets/logo_circle.png\"> <meta name=\"generator\" content=\"mkdocs-1.6.1, mkdocs-material-9.6.11\"> <title>OWASP MASVS - OWASP Mobile Application Security</title> <link rel=\"stylesheet\" href=\"../assets/stylesheets/main.4af4bdda.min.css\"> <link rel=\"stylesheet\" href=\"../assets/stylesheets/palette.06af60db.min.css\"> ",
+      "evidence_window": "%2012%202m0%202a8%208%200%200%201%208%208%208%208%200%200%201-8%208%208%208%200%200%201-8-8%208%208%200%200%201%208-8m0%202a6%206%200%200%200-6%206%206%206%200%200%200%206%206%206%206%200%200%200%206-6%206%206%200%200%200-6-6m0%202a4%204%200%200%201%204%204%204%204%200%200%201-4%204%204%204%200%200%201-4-4%204%204%200%200%201%204-4%22/%3E%3C/svg%3E');}.md-tag.md-tag--eudiw{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M17%203H7C4.79%203%203%204.79%203%207v10c0%202.21%201.79%204%204%204h12c1.11%200%202-.89%202-2V9a2%202%200%200%200-2-2V5a2%202%200%200%200-2-2m0%202v2H7c-.73%200-1.41.2-2%20.54V7c0-1.1.9-2%202-2m8.5%2010.5c-.83%200-1.5-.67-1.5-1.5s.67-1.5%201.5-1.5%201.5.67%201.5%201.5-.67%201.5-1.5%201.5%22/%3E%3C/svg%3E');}.md-tag.md-tag--placeholder{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M20.7%207c.4-.4.4-1%200-1.4l-2.3-2.3c-.4-.4-1-.4-1.4%200l-1.8%201.8L19%208.9M3%2017.2V21h3.8l11-11.1-3.7-3.8zM7%202v3h3v2H7v3H5V7H2V5h3V2z%22/%3E%3C/svg%3E');}.md-tag.md-tag--update-pending{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%209h2V7h-2m1%2013c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m-1%2015h2v-6h-2z%22/%3E%3C/svg%3E');}.md-tag.md-tag--deprecated{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%200a8%208%200%201%201%200%2016A8%208%200%200%201%208%200M3.965%2013.096a6.5%206.5%200%200%200%209.131-9.131ZM1.5%208a6.47%206.47%200%200%200%201.404%204.035l9.131-9.131A6.499%206.499%200%2",
+      "error": null,
+      "expectation_checks": [
+        {
+          "pattern": "MASVS-STORAGE",
+          "found_in_body_or_url": true
+        },
+        {
+          "pattern": "MASVS-PRIVACY|MASVS-RESILIENCE",
+          "found_in_body_or_url": true
+        }
+      ]
+    },
+    "mastg_best": {
+      "url_requested": "https://mas.owasp.org/MASTG/best-practices/",
+      "url_final": "https://mas.owasp.org/MASTG/best-practices/",
+      "http_status": 200,
+      "ok": true,
+      "bytes": 1222181,
+      "excerpt": " <!doctype html> <html lang=\"en\" class=\"no-js\"> <head> <meta charset=\"utf-8\"> <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"> <link rel=\"prev\" href=\"../0x06j-Testing-Resiliency-Against-Reverse-Engineering/\"> <link rel=\"next\" href=\"MASTG-BEST-0001/\"> <link rel=\"icon\" href=\"../../assets/logo_circle.png\"> <meta name=\"generator\" content=\"mkdocs-1.6.1, mkdocs-material-9.6.11\"> <title>Best Practices - OWASP Mobile Application Security</title> <link rel=\"stylesheet\" href=\"../../assets/stylesheets/main.4af4bdda.min.css\"> <link rel=\"stylesheet\" href=\"../../assets/stylesheets/palette.06af60db.min.css\"> ",
+      "evidence_window": "00%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m0%202a8%208%200%200%201%208%208%208%208%200%200%201-8%208%208%208%200%200%201-8-8%208%208%200%200%201%208-8m0%202a6%206%200%200%200-6%206%206%206%200%200%200%206%206%206%206%200%200%200%206-6%206%206%200%200%200-6-6m0%202a4%204%200%200%201%204%204%204%204%200%200%201-4%204%204%204%200%200%201-4-4%204%204%200%200%201%204-4%22/%3E%3C/svg%3E');}.md-tag.md-tag--eudiw{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M17%203H7C4.79%203%203%204.79%203%207v10c0%202.21%201.79%204%204%204h12c1.11%200%202-.89%202-2V9a2%202%200%200%200-2-2V5a2%202%200%200%200-2-2m0%202v2H7c-.73%200-1.41.2-2%20.54V7c0-1.1.9-2%202-2m8.5%2010.5c-.83%200-1.5-.67-1.5-1.5s.67-1.5%201.5-1.5%201.5.67%201.5%201.5-.67%201.5-1.5%201.5%22/%3E%3C/svg%3E');}.md-tag.md-tag--placeholder{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M20.7%207c.4-.4.4-1%200-1.4l-2.3-2.3c-.4-.4-1-.4-1.4%200l-1.8%201.8L19%208.9M3%2017.2V21h3.8l11-11.1-3.7-3.8zM7%202v3h3v2H7v3H5V7H2V5h3V2z%22/%3E%3C/svg%3E');}.md-tag.md-tag--update-pending{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M11%209h2V7h-2m1%2013c-4.41%200-8-3.59-8-8s3.59-8%208-8%208%203.59%208%208-3.59%208-8%208m0-18A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m-1%2015h2v-6h-2z%22/%3E%3C/svg%3E');}.md-tag.md-tag--deprecated{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%200a8%208%200%201%201%200%2016A8%208%200%200%201%208%200M3.965%2013.096a6.5%206.5%200%200%200%209.131-9.131ZM1.5%208a6",
+      "error": null,
+      "expectation_checks": [
+        {
+          "pattern": "MASTG-BEST",
+          "found_in_body_or_url": true
+        }
+      ]
+    },
+    "android_risks": {
+      "url_requested": "https://developer.android.com/privacy-and-security/risks",
+      "url_final": "https://developer.android.com/privacy-and-security/risks",
+      "http_status": 200,
+      "ok": true,
+      "bytes": 273775,
+      "excerpt": " <!doctype html> <html lang=\"en\" dir=\"ltr\"> <head> <meta name=\"google-signin-client-id\" content=\"721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com\"><meta name=\"google-signin-scope\" content=\"profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty\"><meta property=\"og:site_name\" content=\"Android Developers\"> <meta property=\"og:type\" content=\"website\"><meta name=\"theme-color\" content=\"#34a853\"><meta charset=\"utf-8\"> <meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"manifest\" href=\"/_pwa/android/manifest.json\" crossorigin=\"use-credentials\"> <link rel=\"preconnect\" href=\"//www.gstatic.com\" crossorigin> <link rel=\"preconnect\" href=\"//fonts.googleapis.com\" crossorigin> <link rel=\"preconnect\" href=\"//www.google-analytics.com\" crossorigin><link rel=\"stylesheet\" href=\"//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,60",
+      "evidence_window": "eloper.android.com/static/images/social/android-developers.png\"> <meta property=\"og:image:width\" content=\"1200\"> <meta property=\"og:image:height\" content=\"675\"><meta property=\"og:locale\" content=\"en\"><meta name=\"twitter:card\" content=\"summary_large_image\"><script type=\"application/ld+json\"> { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Mitigate security risks in your app\" } </script><script type=\"application/ld+json\"> { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Security\", \"item\": \"https://developer.android.com/security\" },{ \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Mitigate security risks in your app\", \"item\": \"https://developer.android.com/privacy-and-security/risks\" }] } </script> </head> <body class=\"color-scheme--light\" template=\"page\" theme=\"android-theme\" type=\"article\" appearance layout=\"docs\" display-toc pending> <devsite-progress type=\"indeterminate\" id=\"app-progress\"></devsite-progress> <a href=\"#main-content\" class=\"skip-link button\"> Skip to main content </a> <section class=\"devsite-wrapper\"> <devsite-cookie-notification-bar></devsite-cookie-notification-bar> <devsite-header role=\"banner\"> <div class=\"devsite-header--inner\" data-nosnippet> <div class=\"devsite-top-logo-row-wrapper-wrapper\"> <div class=\"devsite-top-logo-row-wrapper\"> <div class=\"devsite-top-logo-row\"> <button type=\"button\" id=\"devsite-hamburger-menu\" class=\"devsite-header-icon-button button-flat material-icons gc-analytics-event\" data-category=\"Site-Wide Custom Events\" data-label=\"Navigation menu button\" visually-hidden aria-label=\"Open menu\"> </button> <div class=\"devsite-product-name-wrapper\"> <a href=\"/\" class=\"devsite-site-logo-link gc-analytics-event\" data-category=\"Site-Wide Custom Events\" data-label=\"Site logo\" track-type=\"globalNav\" track-name=\"androidDevelopers\" track-metadata-position=\"nav\" track-metadata-eventDetail=\"nav\"> <picture> <source srcset=\"https://www.gstatic.",
+      "error": null,
+      "expectation_checks": [
+        {
+          "pattern": "MASVS-",
+          "found_in_body_or_url": true
+        }
+      ]
+    },
+    "pixel_bulletin_oct2026": {
+      "url_requested": "https://source.android.com/docs/security/bulletin/pixel/2026/2026-10-01",
+      "url_final": "https://source.android.com/docs/security/bulletin/pixel/2026/2026-10-01",
+      "http_status": 200,
+      "ok": true,
+      "bytes": 187285,
+      "excerpt": " <!doctype html> <html lang=\"en\" dir=\"ltr\"> <head> <meta name=\"google-signin-client-id\" content=\"721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com\"><meta name=\"google-signin-scope\" content=\"profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty\"><meta property=\"og:site_name\" content=\"Android Open Source Project\"> <meta property=\"og:type\" content=\"website\"><meta name=\"theme-color\" content=\"#34a853\"><meta charset=\"utf-8\"> <meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"manifest\" href=\"/_pwa/androidsource/manifest.json\" crossorigin=\"use-credentials\"> <link rel=\"preconnect\" href=\"//www.gstatic.com\" crossorigin> <link rel=\"preconnect\" href=\"//fonts.googleapis.com\" crossorigin> <link rel=\"preconnect\" href=\"//www.google-analytics.com\" crossorigin><link rel=\"stylesheet\" href=\"//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,5",
+      "evidence_window": "26-10-01?hl=vi\" /><title>Pixel Update Bulletin\u2014October 2026 &nbsp;|&nbsp; Security &nbsp;|&nbsp; Android Open Source Project</title> <meta property=\"og:title\" content=\"Pixel Update Bulletin\u2014October 2026 &nbsp;|&nbsp; Security &nbsp;|&nbsp; Android Open Source Project\"><meta property=\"og:url\" content=\"https://source.android.com/docs/security/bulletin/pixel/2026/2026-10-01\"><meta property=\"og:locale\" content=\"en\"><script type=\"application/ld+json\"> { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Pixel Update Bulletin\u2014October 2026\" } </script><script type=\"application/ld+json\"> { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Docs\", \"item\": \"https://source.android.com/docs\" },{ \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Security\", \"item\": \"https://source.android.com/docs/security\" },{ \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Pixel Update Bulletin\u2014October 2026\", \"item\": \"https://source.android.com/docs/security/bulletin/pixel/2026/2026-10-01\" }] } </script> </head> <body class=\"color-scheme--light\" template=\"page\" theme=\"androidsource-theme\" type=\"article\" appearance layout=\"docs\" display-toc pending> <devsite-progress type=\"indeterminate\" id=\"app-progress\"></devsite-progress> <a href=\"#main-content\" class=\"skip-link button\"> Skip to main content </a> <section class=\"devsite-wrapper\"> <devsite-cookie-notification-bar></devsite-cookie-notification-bar> <devsite-header role=\"banner\" keep-tabs-visible> <div class=\"devsite-header--inner\" data-nosnippet> <div class=\"devsite-top-logo-row-wrapper-wrapper\"> <div class=\"devsite-top-logo-row-wrapper\"> <div class=\"devsite-top-logo-row\"> <button type=\"button\" id=\"devsite-hamburger-menu\" class=\"devsite-header-icon-button button-flat material-icons gc-analytics-event\" data-category=\"Site-Wide Custom Events\" data-label=\"Navigation menu button\" visually-hidden aria-label=\"Open menu\"> </button> <div class=\"devsite-product-name-wra",
+      "error": null,
+      "expectation_checks": [
+        {
+          "pattern": "2026-10-05|Pixel Update Bulletin",
+          "found_in_body_or_url": true
+        }
+      ]
+    },
+    "app_element": {
+      "url_requested": "https://developer.android.com/guide/topics/manifest/application-element",
+      "url_final": "https://developer.android.com/guide/topics/manifest/application-element",
+      "http_status": 200,
+      "ok": true,
+      "bytes": 360140,
+      "excerpt": " <!doctype html> <html lang=\"en\" dir=\"ltr\"> <head> <meta name=\"google-signin-client-id\" content=\"721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com\"><meta name=\"google-signin-scope\" content=\"profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty\"><meta property=\"og:site_name\" content=\"Android Developers\"> <meta property=\"og:type\" content=\"website\"><meta name=\"theme-color\" content=\"#34a853\"><meta charset=\"utf-8\"> <meta content=\"IE=Edge\" http-equiv=\"X-UA-Compatible\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <link rel=\"manifest\" href=\"/_pwa/android/manifest.json\" crossorigin=\"use-credentials\"> <link rel=\"preconnect\" href=\"//www.gstatic.com\" crossorigin> <link rel=\"preconnect\" href=\"//fonts.googleapis.com\" crossorigin> <link rel=\"preconnect\" href=\"//www.google-analytics.com\" crossorigin><link rel=\"stylesheet\" href=\"//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Google+Sans+Text:400,400italic,500,500italic,600,60",
+      "evidence_window": "sp;|&nbsp; App architecture &nbsp;|&nbsp; Android Developers</title> <meta property=\"og:title\" content=\"&lt;application> &nbsp;|&nbsp; App architecture &nbsp;|&nbsp; Android Developers\"><meta name=\"description\" content=\"The declaration of the application. This element contains subelements that declare each of the application&amp;#39;s components and has attributes that can affect all the components. Many of these attributes (such as icon, label, permission, process, taskAffinity\u2026\"> <meta property=\"og:description\" content=\"The declaration of the application. This element contains subelements that declare each of the application&amp;#39;s components and has attributes that can affect all the components. Many of these attributes (such as icon, label, permission, process, taskAffinity\u2026\"><meta property=\"og:url\" content=\"https://developer.android.com/guide/topics/manifest/application-element\"><meta property=\"og:image\" content=\"https://developer.android.com/static/images/social/android-developers.png\"> <meta property=\"og:image:width\" content=\"1200\"> <meta property=\"og:image:height\" content=\"675\"><meta property=\"og:locale\" content=\"en\"><meta name=\"twitter:card\" content=\"summary_large_image\"><script type=\"application/ld+json\"> { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"&lt;application>\" } </script><script type=\"application/ld+json\"> { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{ \"@type\": \"ListItem\", \"position\": 1, \"name\": \"App architecture\", \"item\": \"https://developer.android.com/topic/architecture/intro\" },{ \"@type\": \"ListItem\", \"position\": 2, \"name\": \"&amp;lt;application&gt;\", \"item\": \"https://developer.android.com/guide/topics/manifest/application-element\" }] } </script> </head> <body class=\"color-scheme--light\" template=\"page\" theme=\"android-theme\" type=\"article\" appearance layout=\"docs\" display-toc pending> <devsite-progress type=\"indeterminate\" id=\"app-progress\"></devsite-progress> <a href=\"#main-content\" ",
+      "error": null,
+      "expectation_checks": [
+        {
+          "pattern": "allowBackup",
+          "found_in_body_or_url": true
+        }
+      ]
+    }
+  },
+  "interpretation_rules": [
+    "Only claim what excerpt+status prove. If degraded, mark README numbers as 'unverified at fetch time'.",
+    "Re-run before citing: python src/live_verify.py"
+  ]
+}

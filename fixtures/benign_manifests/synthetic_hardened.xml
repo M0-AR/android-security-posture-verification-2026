@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SYNTHETIC defensive fixture. Hardened posture for detector testing. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.synthetic.hardened">
+  <application android:label="SyntheticHardened" android:allowBackup="false" android:usesCleartextTraffic="false">
+    <activity android:name=".MainActivity" android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:name=".InternalPanel" android:exported="false" />
+    <service android:name=".PartnerService" android:exported="true" android:permission="com.example.synthetic.hardened.PERMISSION_PARTNER" />
+    <receiver android:name=".InternalReceiver" android:exported="false">
+      <intent-filter>
+        <action android:name="com.example.synthetic.INTERNAL" />
+      </intent-filter>
+    </receiver>
+    <provider android:name=".InternalProvider" android:authorities="com.example.synthetic.hardened.provider" android:exported="false" android:grantUriPermissions="false" />
+  </application>
+</manifest>

@@ -1,0 +1,4 @@
+jina-reader==0.0.1
+# Minimal reproducible deps — stdlib only for audits; requests only for live verification
+requests>=2.31
+pytest>=8.0
